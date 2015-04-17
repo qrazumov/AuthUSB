@@ -337,8 +337,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 431);
             this.Controls.Add(this.tabControl1);
+            this.KeyPreview = true;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Клиент базы данных SQLite";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();

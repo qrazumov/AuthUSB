@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Devart.Data.SQLite;
+//using Devart.Data.SQLite;
+using System.Data.SQLite;
 
 namespace AuthUSB
 {
