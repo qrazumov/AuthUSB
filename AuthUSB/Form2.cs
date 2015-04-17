@@ -25,7 +25,7 @@ namespace AuthUSB
             
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.student". При необходимости она может быть перемещена или удалена.
             this.studentTableAdapter.Fill(this.dataSet1.student);
-            SQLiteConnection connection = new SQLiteConnection(@"Data Source=C:\Users\razum_000\Desktop\курсач по куратору\AuthUSB\AuthUSB\database\database.db;FailIfMissing=True;");
+            SQLiteConnection connection = new SQLiteConnection("Data Source=database.db;FailIfMissing=True;");
 
             SQLiteCommand command = connection.CreateCommand();
             command.CommandText = "select * from student";
@@ -83,7 +83,7 @@ namespace AuthUSB
 
 
 
-            SQLiteConnection connection = new SQLiteConnection(@"Data Source=C:\Users\razum_000\Desktop\курсач по куратору\AuthUSB\AuthUSB\database\database.db;FailIfMissing=True;");
+            SQLiteConnection connection = new SQLiteConnection("Data Source=database.db;FailIfMissing=True;");
             SQLiteCommand cmd = new SQLiteCommand();
             cmd.CommandText = "DELETE FROM student WHERE id=@ID";
             cmd.Parameters.AddWithValue("@ID",dataGridView1.SelectedRows[0].Cells[0].Value.ToString());

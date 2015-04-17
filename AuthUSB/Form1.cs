@@ -86,7 +86,7 @@ namespace AuthUSB
         private void button1_Click(object sender, EventArgs e)
         {
             // вытягиваем из db hash
-            SQLiteConnection connection = new SQLiteConnection(@"Data Source=C:\Users\razum_000\Desktop\курсач по куратору\AuthUSB\AuthUSB\database\database.db;FailIfMissing=True;");
+            SQLiteConnection connection = new SQLiteConnection("Data Source=database.db;FailIfMissing=True;");
             SQLiteCommand command = connection.CreateCommand();
             command.CommandText = "select * from auth";
             command.Connection = connection;

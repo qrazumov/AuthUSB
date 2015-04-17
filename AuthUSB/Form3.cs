@@ -19,7 +19,7 @@ namespace AuthUSB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection connection = new SQLiteConnection(@"Data Source=C:\Users\razum_000\Desktop\курсач по куратору\AuthUSB\AuthUSB\database\database.db;FailIfMissing=True;");
+            SQLiteConnection connection = new SQLiteConnection("Data Source=database.db;FailIfMissing=True;");
             SQLiteCommand cmd = new SQLiteCommand();
             
             string id = textBox1.Text;

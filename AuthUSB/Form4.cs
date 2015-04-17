@@ -18,7 +18,8 @@ namespace AuthUSB
         }
         private void Form4_Load(object sender, EventArgs e)
         {
-            SQLiteConnection connection = new SQLiteConnection(@"Data Source=C:\Users\razum_000\Desktop\курсач по куратору\AuthUSB\AuthUSB\database\database.db;FailIfMissing=True;");
+           // SQLiteConnection connection = new SQLiteConnection(@"Data Source=C:\Users\razum_000\Desktop\курсач по куратору\AuthUSB\AuthUSB\database\database.db;FailIfMissing=True;");
+            SQLiteConnection connection = new SQLiteConnection("Data Source=database.db;FailIfMissing=True;");
             SQLiteCommand command = connection.CreateCommand();
             command.CommandText = "select * from auth";
             command.Connection = connection;
