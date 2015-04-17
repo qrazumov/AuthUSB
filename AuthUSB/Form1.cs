@@ -166,7 +166,7 @@ namespace AuthUSB
                     }
                 }
             }
-            if (isTrue)
+            if (isTrue) 
             {
                 //Console.WriteLine("Аутентификация пройдена!!!");
                 label1.ForeColor = Color.Green;
@@ -215,6 +215,7 @@ namespace AuthUSB
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // выводим окно о программе
             Form5 frm5 = new Form5();
             frm5.Show();
         }
