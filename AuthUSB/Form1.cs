@@ -161,6 +161,7 @@ namespace AuthUSB
                     {
                         //MessageBox.Show(er.Message);
                         MessageBox.Show("Ошибка аутентификации!\nОтказано в доступе");
+                        // добавил коммент
                         return;
                     }
                 }
