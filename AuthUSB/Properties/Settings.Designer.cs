@@ -26,8 +26,7 @@ namespace AuthUSB.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=\"C:\\Users\\razum_000\\Desktop\\курсач по куратору\\AuthUSB\\AuthUSB\\databa" +
-            "se\\database.db\"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C:\\Users\\razum_000\\AuthUSB\\AuthUSB\\bin\\Debug\\database.db")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

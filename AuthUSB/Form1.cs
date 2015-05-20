@@ -25,6 +25,7 @@ namespace AuthUSB
          */
         private void Form1_Load(object sender, EventArgs e)
         {
+
             button2.Visible = false; // закыто, пока не прошли аутентификацю
             label1.Text = "";
             label5.Text = "";
@@ -37,7 +38,7 @@ namespace AuthUSB
 
 
         // находим md4 hash
-        static string GetMd5Hash(MD5 md5Hash, string input)
+        public static string GetMd5Hash(MD5 md5Hash, string input)
         {
 
             // Convert the input string to a byte array and compute the hash. 
@@ -82,7 +83,10 @@ namespace AuthUSB
         |
         |
          */
-        public string hash = "";
+        public static string hash = "";
+        public static string currentSerialNumber = "";
+        public static string Model = "";
+        public static string Size = "";
         private void button1_Click(object sender, EventArgs e)
         {
             // вытягиваем из db hash
@@ -122,12 +126,21 @@ namespace AuthUSB
                         // if (theSerialNumberObjectQuery["SerialNumber"].ToString() == "0B7007773020")
                         // создаем строку, которая будет переведена в hash
 
-                        string _SerialNumber = theSerialNumberObjectQuery["SerialNumber"].ToString();
-                        string _Model = currentObject["Model"].ToString();
-                        string _Size = currentObject["Size"].ToString();
+                        currentSerialNumber = theSerialNumberObjectQuery["SerialNumber"].ToString();
+                        if (currentSerialNumber[0] == 48 && currentSerialNumber[1] == 48 && currentSerialNumber[2] == 48)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            currentSerialNumber = theSerialNumberObjectQuery["SerialNumber"].ToString();
+                            Model = currentObject["Model"].ToString();
+                            Size = currentObject["Size"].ToString();
+                        }
+                        
 
 
-                        string source = _SerialNumber + _Model + _Size;
+                        string source = currentSerialNumber + Model + Size;
 
                         MD5 md5Hash = MD5.Create();
 
@@ -218,6 +231,12 @@ namespace AuthUSB
             // выводим окно о программе
             Form5 frm5 = new Form5();
             frm5.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form4 frm4 = new Form4();
+            frm4.Show();
         }
 
         
